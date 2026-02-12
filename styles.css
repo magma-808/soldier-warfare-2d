@@ -1,0 +1,40 @@
+.canvas {
+    width: 100%;
+    height: auto;
+    background: #333;
+}
+
+.ui {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.hud {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.weapon-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    .ui {
+        font-size: 12px;
+    }
+    .weapon-indicator {
+        font-size: 12px;
+    }
+}
