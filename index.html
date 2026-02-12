@@ -1,1 +1,36 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Soldier Warfare 2D</title>\n    <style>\n        body {\n            margin: 0;\n            padding: 0;\n            overflow: hidden;\n            background-color: #000;\n        }\n        #canvas {\n            display: block;\n            margin: 0 auto;\n            background-color: #fff;\n        }\n        #hud {\n            position: absolute;\n            top: 10px;\n            left: 10px;\n            color: white;\n        }\n    </style>\n</head>\n<body>\n    <div id="hud">\n        <div id="score">Score: 0</div>\n        <div id="lives">Lives: 3</div>\n    </div>\n    <canvas id="canvas" width="800" height="600"></canvas>\n    <script>\n        const canvas = document.getElementById('canvas');\n        const ctx = canvas.getContext('2d');\n        let score = 0;\n        let lives = 3;\n        \n        function updateHUD() {\n            document.getElementById('score').innerText = 'Score: ' + score;\n            document.getElementById('lives').innerText = 'Lives: ' + lives;\n        }\n        \n        function gameLoop() {\n            // Game logic goes here.\n            ctx.clearRect(0, 0, canvas.width, canvas.height);\n            // Draw game elements here.\n            updateHUD();\n            requestAnimationFrame(gameLoop);\n        }\n        \n        gameLoop();\n    <\/script>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soldier Warfare 2D</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="1200" height="700"></canvas>
+        <div id="hud">
+            <div id="score-display">Score: 0</div>
+            <div id="health-display">Health: 100</div>
+            <div id="weapon-display">Weapon: Pistol Basic</div>
+            <div id="ammo-display">Ammo: 100</div>
+            <div id="wave-display">Wave: 1</div>
+            <div id="enemies-display">Enemies: 0</div>
+        </div>
+        <div id="menu" class="menu">
+            <h1>SOLDIER WARFARE 2D</h1>
+            <p>Click to Start</p>
+        </div>
+        <div id="game-over" class="game-over-screen" style="display:none;">
+            <h1>GAME OVER</h1>
+            <p id="final-score">Score: 0</p>
+            <p>Click to Restart</p>
+        </div>
+    </div>
+
+    <script src="weapons.js"></script>
+    <script src="enemies.js"></script>
+    <script src="game.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
